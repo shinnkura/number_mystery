@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:number_mystery/presentation/features/game/game_controller.dart';
+import 'package:number_mystery/application/game/game_controller.dart';
 
 class GameStart extends ConsumerWidget {
   const GameStart({Key? key}) : super(key: key);

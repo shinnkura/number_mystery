@@ -1,8 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:number_mystery/domain/game/game.dart';
 
-final gameControllerProvider =
-    StateNotifierProvider<GameController, Game>((ref) => GameController());
+final gameControllerProvider = StateNotifierProvider<GameController, Game>(
+  (ref) => GameController(),
+);
 
 class GameController extends StateNotifier<Game> {
   GameController() : super(Game.initial());
@@ -21,5 +22,13 @@ class GameController extends StateNotifier<Game> {
 
   void updatePlayerName(int id, String name) {
     state = state.updatePlayerName(id, name);
+  }
+
+  void resetGame() {
+    state = Game.initial();
+  }
+
+  void updateGameTheme(String newTheme) {
+    state = state.copyWith(theme: newTheme);
   }
 }

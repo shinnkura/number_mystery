@@ -12,7 +12,7 @@ class Player with _$Player {
 
   factory Player.initial(int id, int number) => Player(
         id: id,
-        name: '',
+        name: 'Player ${id + 1}',
         number: number,
       );
 }

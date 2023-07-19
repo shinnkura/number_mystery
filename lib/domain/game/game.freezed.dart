@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$Game {
   List<Player> get players => throw _privateConstructorUsedError;
   bool get isCompleted => throw _privateConstructorUsedError;
+  String get theme => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $GameCopyWith<Game> get copyWith => throw _privateConstructorUsedError;
@@ -28,7 +29,7 @@ abstract class $GameCopyWith<$Res> {
   factory $GameCopyWith(Game value, $Res Function(Game) then) =
       _$GameCopyWithImpl<$Res, Game>;
   @useResult
-  $Res call({List<Player> players, bool isCompleted});
+  $Res call({List<Player> players, bool isCompleted, String theme});
 }
 
 /// @nodoc
@@ -46,6 +47,7 @@ class _$GameCopyWithImpl<$Res, $Val extends Game>
   $Res call({
     Object? players = null,
     Object? isCompleted = null,
+    Object? theme = null,
   }) {
     return _then(_value.copyWith(
       players: null == players
@@ -56,6 +58,10 @@ class _$GameCopyWithImpl<$Res, $Val extends Game>
           ? _value.isCompleted
           : isCompleted // ignore: cast_nullable_to_non_nullable
               as bool,
+      theme: null == theme
+          ? _value.theme
+          : theme // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -66,7 +72,7 @@ abstract class _$$_GameCopyWith<$Res> implements $GameCopyWith<$Res> {
       __$$_GameCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Player> players, bool isCompleted});
+  $Res call({List<Player> players, bool isCompleted, String theme});
 }
 
 /// @nodoc
@@ -80,6 +86,7 @@ class __$$_GameCopyWithImpl<$Res> extends _$GameCopyWithImpl<$Res, _$_Game>
   $Res call({
     Object? players = null,
     Object? isCompleted = null,
+    Object? theme = null,
   }) {
     return _then(_$_Game(
       players: null == players
@@ -90,6 +97,10 @@ class __$$_GameCopyWithImpl<$Res> extends _$GameCopyWithImpl<$Res, _$_Game>
           ? _value.isCompleted
           : isCompleted // ignore: cast_nullable_to_non_nullable
               as bool,
+      theme: null == theme
+          ? _value.theme
+          : theme // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -98,7 +109,9 @@ class __$$_GameCopyWithImpl<$Res> extends _$GameCopyWithImpl<$Res, _$_Game>
 
 class _$_Game implements _Game {
   const _$_Game(
-      {required final List<Player> players, required this.isCompleted})
+      {required final List<Player> players,
+      required this.isCompleted,
+      required this.theme})
       : _players = players;
 
   final List<Player> _players;
@@ -111,10 +124,12 @@ class _$_Game implements _Game {
 
   @override
   final bool isCompleted;
+  @override
+  final String theme;
 
   @override
   String toString() {
-    return 'Game(players: $players, isCompleted: $isCompleted)';
+    return 'Game(players: $players, isCompleted: $isCompleted, theme: $theme)';
   }
 
   @override
@@ -124,53 +139,63 @@ class _$_Game implements _Game {
             other is _$_Game &&
             const DeepCollectionEquality().equals(other._players, _players) &&
             (identical(other.isCompleted, isCompleted) ||
-                other.isCompleted == isCompleted));
+                other.isCompleted == isCompleted) &&
+            (identical(other.theme, theme) || other.theme == theme));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_players), isCompleted);
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_players), isCompleted, theme);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$_GameCopyWith<_$_Game> get copyWith =>
       __$$_GameCopyWithImpl<_$_Game>(this, _$identity);
-
-  @override
-  Game addPlayer(String name) {
-    // TODO: implement addPlayer
-    throw UnimplementedError();
-  }
-
-  @override
-  Game completeGame() {
-    // TODO: implement completeGame
-    throw UnimplementedError();
-  }
-
-  @override
-  Game start(int numberOfPlayers) {
-    // TODO: implement start
-    throw UnimplementedError();
-  }
-
-  @override
-  Game updatePlayerName(int id, String name) {
-    // TODO: implement updatePlayerName
-    throw UnimplementedError();
-  }
+      
+        @override
+        Game addPlayer(String name) {
+          // TODO: implement addPlayer
+          throw UnimplementedError();
+        }
+      
+        @override
+        Game completeGame() {
+          // TODO: implement completeGame
+          throw UnimplementedError();
+        }
+      
+        @override
+        Game start(int numberOfPlayers) {
+          // TODO: implement start
+          throw UnimplementedError();
+        }
+      
+        @override
+        startGame(int i) {
+          // TODO: implement startGame
+          throw UnimplementedError();
+        }
+      
+        @override
+        Game updatePlayerName(int id, String name) {
+          // TODO: implement updatePlayerName
+          throw UnimplementedError();
+        }
 }
 
 abstract class _Game implements Game {
   const factory _Game(
       {required final List<Player> players,
-      required final bool isCompleted}) = _$_Game;
+      required final bool isCompleted,
+      required final String theme}) = _$_Game;
 
   @override
   List<Player> get players;
   @override
   bool get isCompleted;
+  @override
+  String get theme;
   @override
   @JsonKey(ignore: true)
   _$$_GameCopyWith<_$_Game> get copyWith => throw _privateConstructorUsedError;
