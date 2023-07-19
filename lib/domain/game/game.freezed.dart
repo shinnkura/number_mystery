@@ -152,36 +152,6 @@ class _$_Game implements _Game {
   @pragma('vm:prefer-inline')
   _$$_GameCopyWith<_$_Game> get copyWith =>
       __$$_GameCopyWithImpl<_$_Game>(this, _$identity);
-      
-        @override
-        Game addPlayer(String name) {
-          // TODO: implement addPlayer
-          throw UnimplementedError();
-        }
-      
-        @override
-        Game completeGame() {
-          // TODO: implement completeGame
-          throw UnimplementedError();
-        }
-      
-        @override
-        Game start(int numberOfPlayers) {
-          // TODO: implement start
-          throw UnimplementedError();
-        }
-      
-        @override
-        startGame(int i) {
-          // TODO: implement startGame
-          throw UnimplementedError();
-        }
-      
-        @override
-        Game updatePlayerName(int id, String name) {
-          // TODO: implement updatePlayerName
-          throw UnimplementedError();
-        }
 }
 
 abstract class _Game implements Game {

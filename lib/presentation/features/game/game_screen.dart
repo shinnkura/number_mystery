@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:number_mystery/application/game/game_controller.dart';
-// import 'package:number_mystery/application/player/player_controller.dart';
 import 'package:number_mystery/presentation/features/player/player_screen.dart';
 
 class GameScreen extends ConsumerWidget {
@@ -36,7 +35,7 @@ class GameScreen extends ConsumerWidget {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => gameController.startGame(5),
+        onPressed: () => ref.read(gameControllerProvider.notifier).startGame(5),
         child: Icon(Icons.play_arrow),
       ),
     );
