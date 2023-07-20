@@ -48,4 +48,15 @@ class GameController extends StateNotifier<Game> {
   void updateGameTheme(String newTheme) {
     state = state.copyWith(theme: newTheme);
   }
+
+  void setPlayerName(int playerId, String name) {
+    final players = state.players.map((player) {
+      if (player.id == playerId) {
+        return player.copyWith(name: name);
+      } else {
+        return player;
+      }
+    }).toList();
+    state = state.copyWith(players: players);
+  }
 }
