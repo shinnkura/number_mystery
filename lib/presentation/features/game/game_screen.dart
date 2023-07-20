@@ -8,7 +8,6 @@ class GameScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final gameController = ref.watch(gameControllerProvider);
-    final TextEditingController _controller = TextEditingController();
 
     return Scaffold(
       appBar: AppBar(
@@ -26,12 +25,12 @@ class GameScreen extends ConsumerWidget {
                     showDialog(
                       context: context,
                       builder: (context) {
-                        final _editController = TextEditingController(
+                        final editController = TextEditingController(
                             text: gameController.players[index].name);
                         return AlertDialog(
                           title: Text('Edit Player Name'),
                           content: TextField(
-                            controller: _editController,
+                            controller: editController,
                             decoration: InputDecoration(
                               labelText: 'Enter new player name',
                             ),
@@ -48,7 +47,7 @@ class GameScreen extends ConsumerWidget {
                               onPressed: () {
                                 ref
                                     .read(gameControllerProvider.notifier)
-                                    .setPlayerName(index, _editController.text);
+                                    .setPlayerName(index, editController.text);
                                 Navigator.of(context).pop();
                               },
                             ),
@@ -68,11 +67,11 @@ class GameScreen extends ConsumerWidget {
           showDialog(
             context: context,
             builder: (context) {
-              final _numController = TextEditingController();
+              final numController = TextEditingController();
               return AlertDialog(
                 title: Text('Start Game'),
                 content: TextField(
-                  controller: _numController,
+                  controller: numController,
                   decoration: InputDecoration(
                     labelText: 'Enter number of players',
                   ),
@@ -90,7 +89,7 @@ class GameScreen extends ConsumerWidget {
                     onPressed: () {
                       ref
                           .read(gameControllerProvider.notifier)
-                          .startGame(int.parse(_numController.text));
+                          .startGame(int.parse(numController.text));
                       Navigator.of(context).pop();
                     },
                   ),
