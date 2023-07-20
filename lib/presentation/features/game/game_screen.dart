@@ -56,6 +56,29 @@ class GameScreen extends ConsumerWidget {
                       },
                     );
                   },
+                  trailing: IconButton(
+                    icon: Icon(Icons.visibility),
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            title: Text('Your Number'),
+                            content: Text(
+                                'Your number is ${gameController.players[index].number}. Please remember it and do not share with others.'),
+                            actions: <Widget>[
+                              TextButton(
+                                child: Text('OK'),
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    },
+                  ),
                 );
               },
             ),
